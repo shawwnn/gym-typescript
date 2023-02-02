@@ -11,7 +11,6 @@ type Props = {
 const Navbar = ({
 	selectedPage, setSelectedPage
 }: Props) => {
-	// const [first, setfirst] = useState(second)
 	const flexBetween = "flex items-center justify-between"
 
   return (
