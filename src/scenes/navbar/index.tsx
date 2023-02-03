@@ -4,6 +4,7 @@ import Logo from "@/assets/Logo.png"
 import Link from "./Link"
 import { SelectedPage } from "@/shared/types";
 import useMediaQuery from "@/hooks/useMediaQuery";
+import ActionButton from "@/shared/ActionButton";
 
 type Props = {
 	selectedPage: SelectedPage;
@@ -22,22 +23,22 @@ const Navbar = ({
 			<div className={`${flexBetween} fixed top-0 z-30 w-full py-6`}>
 				<div className={`${flexBetween} mx-auto w-5/6`}>
 					<div className={`${flexBetween} w-full gap-16`}>
-						<img src={Logo} alt="logo" className="pt-4" />
+						<img src={Logo} alt="logo" className="pt-3" />
 						
 						{isAboveMediumScreens ? (<div className={`${flexBetween} w-full`}>
-							<div className={`${flexBetween} gap-8 text-sm pt-4`}>
+							<div className={`${flexBetween} gap-8 text-sm pt-3`}>
 								<Link page="Home" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
 								<Link page="Benefits" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
 								<Link page="Our Classes" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
 								<Link page="Contact Us" selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
 							</div>
-							<div className={`${flexBetween} gap-8 pt-4`}>
+							<div className={`${flexBetween} gap-8`}>
 								<p>
 									Sign in
 								</p>
-								<button type="button">
+								<ActionButton setSelectedPage={setSelectedPage}>
 									Become a Member
-								</button>
+								</ActionButton>
 							</div>
 						</div>) : (
 							<button type="button" className="rounded-full bg-secondary-500 p-2"
